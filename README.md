@@ -28,6 +28,7 @@
 | GND          | GND         |
 | SDA          | D2 (GPIO4)  |
 | SCL          | D1 (GPIO5)  |
+| INT          | D0          |
 
 > ⚠️ **Note:** Power the MAX30102 with 3.3V to avoid damaging the sensor.
 
@@ -66,14 +67,9 @@ The ESP8266 handles signal processing and prints the data over serial. The onboa
 - 🔋 Battery-powered wearable version
 - 📊 Add OLED display support
 
-## 📝 License
-
-MIT License. Feel free to modify and share this project.
-
 ## 👤 Author
 
 Created by Taha Haris
-Inspired by biomedical sensor applications and IoT innovation.
 
 ---
 
