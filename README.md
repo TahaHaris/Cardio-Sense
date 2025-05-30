@@ -143,8 +143,6 @@ npm run dev
     - Peak (80–90%)
     - Max Effort (90–100%)
 
-**Zone Page:**
-
 - **Workout Simulation Tracker:**
   - Simulates workout session data.
   - Shows % time spent in each zone with progress bars.
@@ -153,6 +151,8 @@ npm run dev
 - **Personalized Zone Display:**
   - Lists zone names, BPM ranges, MHR %, and color codes.
   - Helps users optimize training based on goals (e.g., fat burn vs endurance).
+ 
+**Zone Page:** https://github.com/TahaHaris/Cardio-Sense/blob/main/Zone%20Page.gif
 
 ---
 
