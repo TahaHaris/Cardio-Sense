@@ -159,6 +159,13 @@ npm run dev
 
 ---
 
+## 💡 Why This Matters
+
+Heart disease is the leading cause of death globally.  
+Cardio-Sense brings affordable, real-time heart monitoring to everyone.  
+It helps users detect issues early, optimize fitness, and enable remote care.  
+Combining accessible hardware with AI insights, it turns raw data into action.
+
 ## 👤 Author
 
 **Taha Haris**
