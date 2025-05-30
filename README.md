@@ -157,7 +157,6 @@ npm run dev
     - Why?
     - What should you do?
   - Uses Zod schemas to validate data types and enforce structure.
-  - Reliable, fast, and extendable for future ML integration.
 
 ---
 
@@ -165,5 +164,5 @@ npm run dev
 
 **Taha Haris**
 
-> 💬 Have ideas, bugs, or questions? [Open an issue](https://github.com/your-username/cardio-sense/issues) or contribute to the project!
+> 💬 Have ideas, bugs, or questions?
 
