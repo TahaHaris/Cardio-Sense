@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* Almost White */
+    --foreground: 220 15% 20%; /* Dark Cool Gray */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 15% 20%; /* Dark Cool Gray */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 15% 20%; /* Dark Cool Gray */
+    --primary: 210 90% 48%; /* Bright Blue (Light Theme Optimized) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 0 0% 94%; /* Light Gray */
+    --secondary-foreground: 220 15% 30%; /* Darker Cool Gray for secondary text */
+    --muted: 0 0% 94%; /* Light Gray */
+    --muted-foreground: 0 0% 45.1%; /* Medium Gray for muted text */
+    --accent: 180 90% 40%; /* Darker Cyan (Light Theme Optimized) */
+    --accent-foreground: 0 0% 100%; /* White */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%; /* Light Gray Border */
+    --input: 0 0% 92%; /* Slightly off-white input */
+    --ring: 180 90% 40%; /* Accent Cyan for rings */
+    
+    --chart-1: 210 90% 48%; /* Primary Blue */
+    --chart-2: 180 90% 40%; /* Accent Cyan */
+    --chart-3: 210 90% 65%; /* Lighter Primary Blue */
+    --chart-4: 180 90% 55%; /* Lighter Accent Cyan */
+    --chart-5: 140 50% 60%; /* Soft Green */
+    --radius: 0.5rem;
+
+    /* Sidebar variables for light theme */
+    --sidebar-background: 0 0% 96%; /* Slightly off-white */
+    --sidebar-foreground: 220 15% 25%; /* Dark cool gray text */
+    --sidebar-primary: 210 90% 48%; /* Primary Blue for active items */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on primary */
+    --sidebar-accent: 0 0% 92%; /* Very light gray for hover */
+    --sidebar-accent-foreground: 220 15% 15%; /* Darkest text on hover */
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 210 90% 48%; /* Primary Blue */
+  }
+
+  .dark {
+    --background: 220 15% 15%; /* Very Dark Desaturated Blue */
+    --foreground: 0 0% 95%; /* Off-White */
+    --card: 220 15% 18%; /* Slightly Lighter than BG */
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 12%; /* Slightly Darker for popovers */
+    --popover-foreground: 0 0% 95%;
+    --primary: 210 100% 56%; /* Bright Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 220 15% 22%; /* Another shade of gray */
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 22%;
+    --muted-foreground: 0 0% 65%; /* Lighter gray for muted text */
+    --accent: 180 100% 50%; /* Bright Cyan */
+    --accent-foreground: 180 100% 10%; /* Dark for contrast on accent */
+    --destructive: 0 75% 55%; /* A slightly tuned red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 25%; /* Subtle border */
+    --input: 220 15% 22%; /* Input background */
+    --ring: 180 100% 50%; /* Accent Cyan for rings */
+    
+    --chart-1: 210 100% 56%; /* Primary Blue */
+    --chart-2: 180 100% 50%; /* Accent Cyan */
+    --chart-3: 210 100% 70%; /* Lighter Primary Blue */
+    --chart-4: 180 100% 65%; /* Lighter Accent Cyan */
+    --chart-5: 140 50% 60%; /* Soft Green */
+
+    /* Sidebar variables for dark theme */
+    --sidebar-background: 220 15% 12%; /* Even darker than main bg */
+    --sidebar-foreground: 0 0% 85%; /* Lighter gray for text */
+    --sidebar-primary: 180 100% 50%; /* Accent Cyan for active items */
+    --sidebar-primary-foreground: 180 100% 10%; /* Dark text on accent */
+    --sidebar-accent: 220 15% 20%; /* Slightly lighter than sidebar bg for hover */
+    --sidebar-accent-foreground: 0 0% 95%; /* Off-white text on hover */
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 180 100% 50%; /* Accent Cyan */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* font-family: var(--font-geist-sans); Remove explicit font-family: Arial */
+  }
+}
