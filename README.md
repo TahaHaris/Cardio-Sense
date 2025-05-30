@@ -82,7 +82,7 @@ npm run dev
   - Onboard LED toggles with each detected heartbeat.
 
 - **Wi-Fi & Firebase Support:**
-  - Pushes live data to Firebase Realtime Database (`/vitals/heartRate` and `/vitals/spo2`).
+  - Pushes live data to Firebase Realtime Database.
   - Enables integration with web dashboards or cloud services.
 
 ---
