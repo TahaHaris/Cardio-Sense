@@ -112,6 +112,8 @@ npm run dev
     - Whether your heart rate is normal or abnormal.
     - Explanation and health recommendation.
   - User-friendly feedback with validation and loading indicators.
+ 
+    
 
 ---
 
