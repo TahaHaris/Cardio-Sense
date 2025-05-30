@@ -91,7 +91,6 @@ npm run dev
 
 #### 1. **Main Layout & Navigation**
 - **Sidebar Navigation:** Clean and collapsible sidebar with easy access to pages.
-- **Branding:** Custom SVG pulse logo and "Cardio Sense" title.
 - **Navigation Links:**
   - **Dashboard:** View real-time health data
   - **History:** Analyze past trends
