@@ -6,10 +6,6 @@
 
 ## 🚀 Getting Started
 
-This project consists of two parts:
-
-### 🔧 Part 1: Embedded System (ESP8266 + MAX30102)
-
 #### 🧰 Hardware Requirements
 
 | Component         | Description                               |
@@ -47,7 +43,7 @@ cd cardio-sense/firmware
 
 ---
 
-### 💻 Part 2: Web App (Real-Time Monitoring & AI)
+💻 Step 2: Web App (Real-Time Monitoring & AI)
 
 The Cardio-Sense Web Application helps users **track**, **visualize**, and **analyze** their heart health using real-time data synced from Firebase.
 
