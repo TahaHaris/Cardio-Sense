@@ -108,11 +108,12 @@ npm run dev
 
 - **AI Heart Rate Analysis Card:**
   - Inputs: heart rate, SpO₂, age, resting HR, activity level.
-  - Uses Genkit to analyze data and return:
+  - Uses AI to analyze data and return:
     - Whether your heart rate is normal or abnormal.
     - Explanation and health recommendation.
   - User-friendly feedback with validation and loading indicators.
- 
+
+**Dashboard Demo:** https://github.com/TahaHaris/Cardio-Sense/blob/main/Dashboard%20Page.gif
     
 
 ---
