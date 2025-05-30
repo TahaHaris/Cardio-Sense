@@ -127,6 +127,8 @@ npm run dev
   - Helps identify long-term trends and anomalies.
   - (Currently uses mock data, but Firebase integration is planned.)
 
+**History Demo:** https://github.com/TahaHaris/Cardio-Sense/blob/main/History%20Page.gif
+
 ---
 
 #### 4. **Zones Page**
@@ -140,6 +142,8 @@ npm run dev
     - Cardio (70–80%)
     - Peak (80–90%)
     - Max Effort (90–100%)
+
+**Zone Page:**
 
 - **Workout Simulation Tracker:**
   - Simulates workout session data.
