@@ -1,26 +1,26 @@
 # Cardio-Sense 💓
 
-**Cardio-Sense** is a compact, IoT-ready heart rate and SpO₂ monitoring system using the **MAX30102** pulse oximeter sensor and an **ESP8266** microcontroller. It detects and displays a user’s pulse and blood oxygen levels in real-time, ideal for personal health tracking, wearable projects, or telehealth applications.
+**Cardio-Sense** is a complete heart health monitoring system that combines hardware (ESP8266 + MAX30102) with a modern web application. It provides real-time heart rate (BPM) and blood oxygen (SpO₂) readings, and leverages AI to offer health insights. Designed for personal wellness, fitness training, or telehealth research, it’s both lightweight and powerful.
 
-## 🚀 Features
+---
 
-- 🔬 Accurate heart rate and SpO₂ measurement via MAX30102
-- ⚡ Real-time data processing with ESP8266
-- 🔄 Onboard LED indicator for pulse detection
-- 🖥️ Serial monitor output for live debugging and BPM/SpO₂ readout
-- 🌐 (Optional) Wi-Fi capability for future IoT integration
+## 🚀 Getting Started
 
-## 🧰 Hardware Requirements
+This project consists of two parts:
 
-| Component         | Description                        |
-|------------------|------------------------------------|
-| ESP8266 (NodeMCU) | Wi-Fi enabled microcontroller      |
-| MAX30102          | Pulse oximeter and heart-rate sensor |
-| Jumper wires      | For connections                    |
-| Breadboard        | For prototyping                    |
-| USB Cable         | For power and programming          |
+### 🔧 Part 1: Embedded System (ESP8266 + MAX30102)
 
-## 🔌 Circuit Connections
+#### 🧰 Hardware Requirements
+
+| Component         | Description                               |
+|------------------|-------------------------------------------|
+| ESP8266 (NodeMCU) | Wi-Fi enabled microcontroller             |
+| MAX30102          | Pulse oximeter + heart-rate sensor module |
+| Jumper Wires      | For making electrical connections         |
+| Breadboard        | For prototyping without soldering         |
+| USB Cable         | To program and power the ESP8266          |
+
+#### 🔌 Circuit Connections
 
 | MAX30102 Pin | ESP8266 Pin |
 |--------------|-------------|
@@ -28,49 +28,146 @@
 | GND          | GND         |
 | SDA          | D2 (GPIO4)  |
 | SCL          | D1 (GPIO5)  |
-| INT          | D0          |
+| INT          | D0 (GPIO16) |
 
-> ⚠️ **Note:** Power the MAX30102 with 3.3V to avoid damaging the sensor.
+> ⚠️ **Warning:** Do not power the MAX30102 with 5V. Use 3.3V only.
 
-## 📦 Library Dependencies
+#### ⚙️ How to Run
 
-Install the following libraries via the Arduino Library Manager:
+```bash
+git clone https://github.com/your-username/cardio-sense.git
+cd cardio-sense/firmware
+```
 
-- `Adafruit MAX30105`
-- `Adafruit Sensor`
-- `Wire`
-- `ESP8266WiFi` *(Optional, for Wi-Fi features)*
-
-## 🔧 Setup and Usage
-
-1. Clone or download this repository.
-2. Open `Cardio-Sense.ino` in the Arduino IDE.
-3. Select **ESP8266** as the board and the correct port.
-4. Install all required libraries.
-5. Upload the code to your board.
-6. Open the Serial Monitor at **115200 baud**.
-7. Place your finger on the sensor and observe live readings.
-
-## 🧠 How It Works
-
-The MAX30102 emits infrared and red light into the skin and measures the reflected light to determine:
-
-- **Heart Rate (BPM):** Calculated by analyzing peaks in the IR signal.
-- **SpO₂:** Estimated from the ratio of red and IR light absorption.
-
-The ESP8266 handles signal processing and prints the data over serial. The onboard LED toggles with each heartbeat detection.
-
-## 🌍 Future Improvements
-
-- ☁️ Send data to a cloud server or dashboard
-- 📱 Create a mobile app interface
-- 🔋 Battery-powered wearable version
-- 📊 Add OLED display support
-
-## 👤 Author
-
-Created by Taha Haris
+1. Open `Cardio-Sense.ino` in Arduino IDE
+2. Select **ESP8266** as your board and choose the correct port
+3. Upload the code
+4. Open Serial Monitor at **115200 baud**
+5. Place your finger on the MAX30102 to start receiving live data
 
 ---
 
-💬 *Questions or improvements? Feel free to open an issue or contribute!*
+### 💻 Part 2: Web App (Real-Time Monitoring & AI)
+
+The Cardio-Sense Web Application helps users **track**, **visualize**, and **analyze** their heart health using real-time data synced from Firebase.
+
+#### 🛠️ Tech Stack
+
+| Layer     | Tools Used                                                  |
+|-----------|-------------------------------------------------------------|
+| Frontend  | Next.js, React, TypeScript                                  |
+| UI/UX     | Tailwind CSS, ShadCN UI, Lucide Icons, custom SVG branding  |
+| AI        | Genkit – for intelligent HR analysis                        |
+| Backend   | Firebase Realtime Database                                  |
+
+#### 📁 Setup Instructions
+
+```bash
+cd cardio-sense/web
+npm install
+npm run dev
+```
+
+> ⚠️ Connect this app to a Firebase project and configure your `.env.local` with Firebase credentials.
+
+---
+
+## 🧠 Features Overview (Detailed)
+
+### 📟 Firmware Features (ESP8266 + MAX30102)
+
+- **Accurate Heart Rate & SpO₂ Measurement:**
+  - Uses IR and red light to detect heartbeat and blood oxygen saturation.
+  - Calculates BPM from IR signal peaks.
+  - Estimates SpO₂ from red/IR ratio.
+
+- **Real-Time Data Display:**
+  - Prints live heart rate and SpO₂ values to the serial monitor.
+  - Onboard LED toggles with each detected heartbeat.
+
+- **Wi-Fi & Firebase Support:**
+  - Pushes live data to Firebase Realtime Database (`/vitals/heartRate` and `/vitals/spo2`).
+  - Enables integration with web dashboards or cloud services.
+
+---
+
+### 🖥️ Web Application Features
+
+#### 1. **Main Layout & Navigation**
+- **Sidebar Navigation:** Clean and collapsible sidebar with easy access to pages.
+- **Branding:** Custom SVG pulse logo and "Cardio Sense" title.
+- **Navigation Links:**
+  - **Dashboard:** View real-time health data
+  - **History:** Analyze past trends
+  - **Zones:** Configure and simulate workouts
+- **User Actions (Planned):** Buttons for Account, Settings, Logout (placeholders)
+
+---
+
+#### 2. **Dashboard Page**
+
+- **Live Reading Card:**
+  - Fetches real-time `heartRate` and `spo2` from Firebase.
+  - Shows data in large readable format.
+  - Handles loading/error states gracefully.
+
+- **AI Heart Rate Analysis Card:**
+  - Inputs: heart rate, SpO₂, age, resting HR, activity level.
+  - Uses Genkit to analyze data and return:
+    - Whether your heart rate is normal or abnormal.
+    - Explanation and health recommendation.
+  - User-friendly feedback with validation and loading indicators.
+
+---
+
+#### 3. **History Page**
+
+- **Heart Rate Data Visualizations:**
+  - Interactive **line chart** showing:
+    - Daily average, min, and max BPM over the past 30 days.
+  - **Bar chart** for comparative daily averages.
+  - Helps identify long-term trends and anomalies.
+  - (Currently uses mock data, but Firebase integration is planned.)
+
+---
+
+#### 4. **Zones Page**
+
+- **Zone Configuration:**
+  - Input age or manual Maximum Heart Rate (MHR).
+  - Auto-calculates zones using `220 - age` formula.
+  - Zones include:
+    - Warm-Up (50–60% MHR)
+    - Fat Burn (60–70%)
+    - Cardio (70–80%)
+    - Peak (80–90%)
+    - Max Effort (90–100%)
+
+- **Workout Simulation Tracker:**
+  - Simulates workout session data.
+  - Shows % time spent in each zone with progress bars.
+  - Displays total time and breakdown by zone.
+
+- **Personalized Zone Display:**
+  - Lists zone names, BPM ranges, MHR %, and color codes.
+  - Helps users optimize training based on goals (e.g., fat burn vs endurance).
+
+---
+
+#### 5. **AI Capabilities**
+
+  - Takes user inputs and gives AI feedback:
+    - Is your heart rate normal?
+    - Why?
+    - What should you do?
+  - Uses Zod schemas to validate data types and enforce structure.
+  - Reliable, fast, and extendable for future ML integration.
+
+---
+
+## 👤 Author
+
+**Taha Haris**
+
+> 💬 Have ideas, bugs, or questions? [Open an issue](https://github.com/your-username/cardio-sense/issues) or contribute to the project!
+
