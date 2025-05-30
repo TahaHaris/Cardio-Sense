@@ -43,7 +43,7 @@ cd cardio-sense/firmware
 
 ---
 
-💻 Step 2: Web App (Real-Time Monitoring & AI)
+💻 **Step 2: Web App (Real-Time Monitoring & AI)**
 
 The Cardio-Sense Web Application helps users **track**, **visualize**, and **analyze** their heart health using real-time data synced from Firebase.
 
