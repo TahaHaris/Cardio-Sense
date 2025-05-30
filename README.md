@@ -113,7 +113,7 @@ npm run dev
     - Explanation and health recommendation.
   - User-friendly feedback with validation and loading indicators.
 
-**Dashboard Demo:** https://github.com/TahaHaris/Cardio-Sense/blob/main/Dashboard%20Page.gif
+![Dashboard Demo](https://github.com/TahaHaris/Cardio-Sense/blob/main/Dashboard%20Page.gif)
     
 
 ---
